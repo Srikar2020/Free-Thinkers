@@ -26,4 +26,4 @@ Category.init(
   }
 );
 
-module.exports = Categories;
+module.exports = Category;

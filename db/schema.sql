@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS FreeThinkersfeed_db;
+DROP DATABASE IF EXISTS FreeThinkers_db;
 
 CREATE DATABASE FreeThinkers_db;

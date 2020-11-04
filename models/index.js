@@ -2,7 +2,7 @@
 // import all models
 const Post = require('./Post');
 const User = require('./User');
-const Category = require('./Categories')
+const Category = require('./Category')
 
 
 // create associations
