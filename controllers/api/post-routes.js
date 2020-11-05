@@ -62,8 +62,7 @@ router.get('/:id', (req, res) => {
       });
 });
 
-router.post('/', (req, res) => {
-    // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
+router.post('/', withAuth, (req, res) => {
     Post.create({
       title: req.body.title,
       post_text: req.body.post_text,
@@ -77,7 +76,7 @@ router.post('/', (req, res) => {
       });
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Post.update(
       {
         title: req.body.title,
@@ -102,7 +101,7 @@ router.put('/:id', (req, res) => {
       });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Post.destroy({
       where: {
         id: req.params.id

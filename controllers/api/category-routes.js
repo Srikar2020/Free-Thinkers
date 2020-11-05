@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const {User, Post, Category } = require('../../models');
+const sequelize = require('../../config/connection');
+const withAuth = require('../../utils/auth');
 
 // The `/api/categories` endpoint
 
@@ -46,7 +48,7 @@ router.get('/:id', (req, res) => {
   });
 });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
   // create a new category
   Category.create({
     category_name: req.body.category_name
@@ -57,7 +59,7 @@ router.post('/', (req, res) => {
   });
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
   // update a category by its `id` value
   Category.update(
     {
@@ -81,7 +83,7 @@ router.put('/:id', (req, res) => {
   });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
   // delete a category by its `id` value
   Category.destroy({
     where: {
