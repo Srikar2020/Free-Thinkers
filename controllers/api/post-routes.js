@@ -19,6 +19,10 @@ router.get('/', (req, res) => {
         {
           model: User,
           attributes: ['username']
+        },
+        {
+            model: Category,
+            attributes: ['category_name']
         }
       ]
     })
@@ -46,6 +50,10 @@ router.get('/:id', (req, res) => {
         {
           model: User,
           attributes: ['username']
+        },
+        {
+            model: Category,
+            attributes: ['category_name']
         }
       ]
     })
@@ -66,8 +74,8 @@ router.post('/', withAuth, (req, res) => {
     Post.create({
       title: req.body.title,
       post_text: req.body.post_text,
-      user_id: req.body.user_id,
-      category_id: req.body.category_id
+      category_id: req.body.category_id,
+      user_id: req.session.user_id
     })
       .then(dbPostData => res.json(dbPostData))
       .catch(err => {

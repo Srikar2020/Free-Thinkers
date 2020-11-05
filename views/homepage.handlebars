@@ -1,7 +1,17 @@
 <ol class="post-list">
   {{#each posts as |post|}}
-  <li>
-    {{> post-info post }}
-  </li>
+      <div class = "card col-md">
+        <div class = "card-header text-center bg-white text-dark">
+          <h5 class = "card-title">
+            {{post.title}}
+          </h5>
+        </div>
+        <div class = "card-body bg-white text-dark">
+          <p class = "card-text">
+            {{post.post_text}}
+          </p>
+          <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+        </div>
+      </div>
   {{/each}}
 </ol>

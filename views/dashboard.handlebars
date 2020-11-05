@@ -7,8 +7,12 @@
       <input type="text" id="post-title" name="post-title" />
     </div>
     <div>
-      <label for="post-url">Link</label>
-      <input id="post-url" name="post-url" />
+      <label for="category">Category</label>
+      <input type="text" id="category" name="category" />
+    </div>
+    <div>
+      <label for="post-text">Text</label>
+      <input type="text" id="post-text" name="post-text" />
     </div>
     <button type="submit" class="btn">Create</button>
   </form>
@@ -17,15 +21,23 @@
 {{#if posts.length}}
 <section>
   <h2>Your Posts</h2>
-  <ol>
     {{#each posts as |post|}}
-    <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-    </li>
+      <div class = "card col-md">
+        <div class = "card-header text-center bg-white text-dark">
+          <h5 class = "card-title">
+            {{post.title}}
+          </h5>
+        </div>
+        <div class = "card-body bg-white text-dark">
+          <p class = "card-text">
+            {{post.post_text}}
+          </p>
+          <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+        </div>
+      </div>
     {{/each}}
-  </ol>
 </section>
 {{/if}}
+
 
 <script src="/javascript/add-post.js"></script>
