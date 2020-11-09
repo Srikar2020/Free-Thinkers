@@ -20,7 +20,7 @@ Deployed Application:
 
 # About the Project: (Screenshot)
 
-
+![Capture](https://user-images.githubusercontent.com/61364418/98514153-e5384c00-221d-11eb-9eb1-ad0bcbbc98c3.JPG)
 
 
 # Installation
