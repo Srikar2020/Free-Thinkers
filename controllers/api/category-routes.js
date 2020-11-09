@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
   });
 });
 
-/*
+
 router.get('/:id', (req, res) => {
   // find one category by its `id` value
 
@@ -48,9 +48,9 @@ router.get('/:id', (req, res) => {
     res.status(500).json(err);
   });
 });
-*/
 
-router.get('/:category_name', (req, res) => {
+
+router.get('/name/:category_name', (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
   Category.findOne({
