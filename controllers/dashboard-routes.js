@@ -5,6 +5,10 @@ const {User, Post, Category} = require('../models');
 
 router.get('/', withAuth, (req, res) => {
     Post.findAll({
+        where: {
+          // use the ID from the session
+          user_id: req.session.user_id
+        },
         attributes: [
           'id',
           'title',
