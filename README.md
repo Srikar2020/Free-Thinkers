@@ -8,6 +8,16 @@ Full-Stack application developed for free thinking people who want to use our sp
 # Functionality 
 The person who will use our web application can  
 
+
+
+# Submission: 
+Git Hub URL: 
+https://github.com/Srikar2020/Free-Thinkers
+
+Deployed Application: 
+
+
+
 # About the Project: (Screenshot)
 
 
@@ -19,7 +29,7 @@ The person who will use our web application can
 
 2. Install NPM packages
 
-npm install 
+   npm install 
 
 # Usage
 1. Create a login
@@ -28,14 +38,16 @@ npm install
 
 
 # License 
-MIT License 
 
-Copyright (c) [2020] [Andy Tang, Srikar Kudumula, Teja Koneru]
+  Copyright (c) [2020] [Andy Tang, Srikar Kudumula, Teja Koneru]
 
 # Dependencies 
-1. Express 
-2. Node
+1. Express.js 
+2. Node.js
 3. NPM
+4. RESTful API
+5. Handlebars.js
+
 
 # Contrributing 
 
