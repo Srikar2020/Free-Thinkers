@@ -1,23 +1,25 @@
-<article>
+<article class = "d-flex flex-column p-2 m-5">
   <a href="/dashboard"> &larr; Back to dashboard</a>
-  <h2>
-    Edit Post
-  </h2>
-  <form class="edit-post-form">
-    <div>
-      <label for="post-title">Title</label>
-      <input name="post-title" type="text" value="{{post.title}}" />
-    </div>
-    <div>
-      <label for="post-text">Text</label>
-      <input name="post-text" type="text" value="{{post.post_text}}" />
-    </div>
-    <div>
-      Created by you on {{format_date post.created_at}}
-    </div>
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
-  </form>
+  <div class = "p-3 border border-dark">
+    <h2>
+      Edit Post
+    </h2>
+    <form class="edit-post-form d-flex flex-column">
+
+        <label for="post-title">Title</label>
+        <input name="post-title" type="text" value="{{post.title}}" />
+
+        <label for="post-text">Text</label>
+        <input name="post-text" type="text" class = "input-lg" value="{{post.post_text}}" />
+
+        <p class = "m-2"> Created by you on {{format_date post.created_at}} </p>
+        <div class = "col-12 col-md-8 column m-2">
+          <button type="submit" class = "btn btn-primary">Save post</button>
+          <button type="button" class="btn btn-danger">Delete post</button>
+        </div>
+    </form>
+      
+  </div>
 </article>
 
 <script src="/javascript/edit-post.js"></script>
