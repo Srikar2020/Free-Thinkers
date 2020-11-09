@@ -37,7 +37,7 @@ async function createPost(title, post_text, category_id, user_id) {
   });
 
   if (response.ok) {
-    document.location.replace('/dashboard');
+    document.location.replace('/');
   } else {
     alert(response.statusText);
   }

@@ -4,8 +4,12 @@
     Edit Post
   </h2>
   <form class="edit-post-form">
-    <div class = "d-flex flex-column">
+    <div>
+      <label for="post-title">Title</label>
       <input name="post-title" type="text" value="{{post.title}}" />
+    </div>
+    <div>
+      <label for="post-text">Text</label>
       <input name="post-text" type="text" value="{{post.post_text}}" />
     </div>
     <div>
