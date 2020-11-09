@@ -15,7 +15,7 @@ async function newFormHandler(event) {
           });
       }
       else{
-          alert("Error: " + response.statusText);
+          alert("Error: Category Doesn't Exist!");
       }
     }).catch(function(error){
         alert("Unable to connect to Category API");
