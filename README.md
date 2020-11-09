@@ -15,8 +15,7 @@ Git Hub URL:
 https://github.com/Srikar2020/Free-Thinkers
 
 Deployed Application: 
-
-
+https://protected-sierra-77345.herokuapp.com/
 
 # About the Project: (Screenshot)
 
