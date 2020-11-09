@@ -70,6 +70,43 @@ router.get('/:id', (req, res) => {
       });
 });
 
+router.get('/search/:category_id', (req, res) => {
+  Post.findAll({
+    where: {
+      category_id: req.params.category_id
+    },
+    attributes: [
+      'id',
+      'title',
+      'post_text',
+      'user_id',
+      'category_id',
+      'created_at',
+    ],
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      },
+      {
+          model: Category,
+          attributes: ['category_name']
+      }
+    ]
+  })
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No posts found with this category name!' });
+        return;
+      }
+      res.json(dbPostData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.post('/', withAuth, (req, res) => {
     Post.create({
       title: req.body.title,

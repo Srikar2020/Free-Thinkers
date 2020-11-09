@@ -21,9 +21,10 @@ router.get('/', (req, res) => {
   });
 });
 
+
 router.get('/:id', (req, res) => {
   // find one category by its `id` value
-  // be sure to include its associated Products
+
   Category.findOne({
     where: {
       id: req.params.id
@@ -38,6 +39,28 @@ router.get('/:id', (req, res) => {
   }).then(dbCategoryData => {
     if (!dbCategoryData) {
       res.status(404).json({ message: 'No category found with this id' });
+      return;
+    }
+    res.json(dbCategoryData);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
+
+
+router.get('/name/:category_name', (req, res) => {
+  // find one category by its `id` value
+  // be sure to include its associated Products
+  Category.findOne({
+    where: {
+      category_name: req.params.category_name
+    },
+    attributes:['id', 'category_name']
+  }).then(dbCategoryData => {
+    if (!dbCategoryData) {
+      res.status(404).json({ message: 'No category found with this name' });
       return;
     }
     res.json(dbCategoryData);

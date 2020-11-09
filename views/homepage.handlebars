@@ -2,15 +2,17 @@
   {{#each posts as |post|}}
       <div class = "card col-md">
         <div class = "card-header text-center bg-white text-dark">
-          <h5 class = "card-title">
+          <h1 class = "card-title">
             {{post.title}}
+          </h1>
+          <h5 class = "card-text">
+            created by {{post.user.username}} on {{format_date post.created_at}} in {{post.category.category_name}}
           </h5>
         </div>
         <div class = "card-body bg-white text-dark">
           <p class = "card-text">
             {{post.post_text}}
           </p>
-          <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
         </div>
       </div>
   {{/each}}
