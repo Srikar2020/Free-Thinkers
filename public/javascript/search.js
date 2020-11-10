@@ -46,7 +46,7 @@ function displayPosts(posts){
         const post = posts[i];
 
         var cardEl = document.createElement("div");
-        cardEl.classList = "card col-md";
+        cardEl.classList = "card col-md my-3";
 
         var cardHeaderEl = document.createElement("div");
         cardHeaderEl.classList = "card-header text-center bg-white text-dark";
