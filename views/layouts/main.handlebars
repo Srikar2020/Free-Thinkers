@@ -5,22 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free Thinking</title>
+  <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/foundation.min.js">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 
 <body>
   <div class="wrapper">
-    <header class = "text-center">
+    <header class = "text-center bg-dark">
       <h1>
-        <a href="/">Free Thinking</a>
+        <a href="/" class = "text-light">Free Thinking</a>
       </h1>
       <nav class = "d-flex flex-row justify-content-around">
         {{#if loggedIn}}
-        <a href="/dashboard">Dashboard</a>
-        <a href="/search">Search</a>
-        <button id="logout" class="btn-no-style">Logout</button>
+        <a href="/dashboard" class = "text-light">Dashboard</a>
+        <a href="/search" class = "text-light">Search</a>
+        <button id="logout" class="btn btn-dark">Logout</button>
         {{else}}
-        <a href="/login">Login</a>
+        <a href="/login" class = "text-light">Login</a>
         {{/if}}
       </nav>
     </header>
